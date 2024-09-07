@@ -28,13 +28,11 @@ spec:
         ai.sap.com/resourcePlan: starter # computing power
     spec: |
       predictor:
-        imagePullSecrets:
-          - name: milton-credentials   # your docker registry secret
         minReplicas: 1
         maxReplicas: 5    # how much to scale
         containers:
         - name: kserve-container
-          image: docker.io/miltonc/iris-ai-serving-image:04
+          image: docker.io/kshitij4659/iris-docker-serving:iris-serving-docker
           ports:
             - containerPort: 9001    # customizable port
               protocol: TCP
